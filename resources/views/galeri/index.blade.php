@@ -1,6 +1,6 @@
 @extends('layouts.main')
 @section('konten')
-    <h3>Ini halaman galeri</h3>
+<center> <h3>Galeri</h3></center>
     <div class="row mb-3">
         <div class="col-6">
             <form action="/galeri/cari" method="POST">

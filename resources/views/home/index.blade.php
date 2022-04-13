@@ -1,4 +1,6 @@
 @extends('layouts.main')
 @section('konten')
-    <h3>Kumpulan artikel</h3>
+<div class="container">
+   <center> <h3>Home</h3></center>
+</div>
 @endsection

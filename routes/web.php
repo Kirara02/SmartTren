@@ -3,6 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\GaleriController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\LoginController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +18,12 @@ use App\Http\Controllers\GaleriController;
 |
 */
 
-Route::get('/', [ArtikelController::class, 'home']);
+Route::get('/', [HomeController::class, 'index']);
 Route::get('/artikel',[ArtikelController::class, 'index']);
 Route::post('/artikel/cari',[ArtikelController::class, 'search']);
-Route::post('/artikel/penulis',[ArtikelController::class, 'author']);
+Route::post('/artikel/buat',[ArtikelController::class, 'create']);
 Route::get('/galeri',[GaleriController::class, 'index']);
 Route::post('/galeri/cari',[GaleriController::class, 'search']);
+Route::get('/login',[LoginController::class, 'index']);
+Route::get('daftar',[RegisterController::class, 'index']);
+Route::post('daftar/simpan',[RegisterController::class, 'simpan']);
