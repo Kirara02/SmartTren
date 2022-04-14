@@ -18,10 +18,10 @@ class ArtikelController extends Controller
         
         return view('artikel.index')->with($data);
     }
-    public function author($id){
-        $data['artikel'] = Artikel::where('penulis','=',$id)->get();
-        return view('artikel.author')->with($data);
-    }
+    // public function author($id){
+    //     $data['artikel'] = Artikel::where('penulis','=',$id)->get();
+    //     return view('artikel.author')->with($data);
+    // }
     public function create(Request $req){
         Artikel::create([
             'judul'=> $req->judul,

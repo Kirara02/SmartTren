@@ -8,11 +8,11 @@
             @csrf
             <div class="form-group ">
                 <label for="email">Email</label>
-                <input type="text" name="email" id="email" class="form-control" autocomplete="off" value="{{ old('email') }}">
+                <input type="text" name="email" id="email" class="form-control" autocomplete="off" placeholder="mail@gmail.com" value="{{ old('email') }}">
             </div>
             <div class="form-group ">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" class="form-control" autocomplete="off">
+                <input type="password" name="password" id="password" class="form-control" placeholder="*********" autocomplete="off">
             </div>
             {{ session()->get('Gagal'); }}
             @error('email','password')
