@@ -27,7 +27,15 @@
               </li>
             </ul>
           </div>
-          <a class="nav-link float-end mx-2 " href="/login">Login</a>
+          <div class="d-flex float-end">
+            @auth
+            <a class="nav-link mx-2 {{ Request::is('profil') ? 'active' : '' }}" href="/profil">Profil</a>
+            <a class="nav-link mx-2 " href="/logout">Logout</a>
+            @else
+            <a class="nav-link mx-2 {{ Request::is('daftar') ? 'active' : '' }}" href="/daftar">Daftar</a>
+            <a class="nav-link mx-2 {{ Request::is('login') ? 'active' : '' }}" href="/login">Login</a>
+            @endauth
+          </div>
         </div>
       </nav>
       

@@ -19,11 +19,17 @@ use App\Http\Controllers\LoginController;
 */
 
 Route::get('/', [HomeController::class, 'index']);
+
 Route::get('/artikel',[ArtikelController::class, 'index']);
 Route::post('/artikel/cari',[ArtikelController::class, 'search']);
 Route::post('/artikel/buat',[ArtikelController::class, 'create']);
+
 Route::get('/galeri',[GaleriController::class, 'index']);
 Route::post('/galeri/cari',[GaleriController::class, 'search']);
+
 Route::get('/login',[LoginController::class, 'index']);
+Route::post('/login/auth',[LoginController::class, 'authenticate']);
+Route::get('/logout',[LoginController::class, 'logout']);
+
 Route::get('daftar',[RegisterController::class, 'index']);
 Route::post('daftar/simpan',[RegisterController::class, 'simpan']);
