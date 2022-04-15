@@ -49,4 +49,5 @@ Route::middleware('auth')->group(function(){
     
     Route::get('/profil',[ProfilController::class, 'index']);
     Route::post('/profil/ubah',[ProfilController::class, 'edit']);
+    
 });
