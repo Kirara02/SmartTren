@@ -12,15 +12,15 @@ class LoginController extends Controller
         return view('login.index');
     }
     public function authenticate(Request $request){
-         $credentials = $request->validate([
-             'email'=>['required','email'],
-             'password'=>['required'],
-         ]);
-         if(Auth::attempt($credentials)){
-             $request->session()->regenerate();
-             return redirect('/')->with('Success','Login berhasil');
-         }
-         return back()->with('Gagal','Login anda gagal');
+        $credentials = $request->validate([
+            'email'=>['required','email'],
+            'password'=>['required'],
+        ]);
+        if(Auth::attempt($credentials)){
+            $request->session()->regenerate();
+            return redirect('/')->with('Success','Login berhasil');
+        }
+        return back()->with('Gagal','Login anda gagal');
     }
     public function logout(Request $request){
         Auth::logout();

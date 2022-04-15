@@ -12,7 +12,7 @@
             </div>
             <div class="form-group w-75">
                 <label for="email">Email</label>
-                <input type="email" name="email" id="email" class="form-control">
+                <input type="email" name="email" id="email" placeholder="123@gmail.com" class="form-control">
             </div>
             <div class="form-group w-50">
                 <label for="alamat">Alamat</label>

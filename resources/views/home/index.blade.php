@@ -2,7 +2,7 @@
 @section('konten')
 
 <div class="container">
-   @auth       
+   @auth        
    <center> <h3>Selamat Datang {{ auth()->user()->name }}</h3></center>
    @endauth
 </div>

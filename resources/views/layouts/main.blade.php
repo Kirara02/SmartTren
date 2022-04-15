@@ -14,6 +14,25 @@
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+          @auth
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{ Request::is('artikel') ? 'active' : '' }}" href="/artikel">Artikel</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link {{ Request::is('galeri') ? 'active' : '' }}" href="/post">Post</a>
+              </li>
+            </ul>
+          </div>
+          <div class="d-flex float-end">
+            <a class="nav-link mx-2 {{ Request::is('profil') ? 'active' : '' }}" href="/profil">Profil</a>
+            <a class="nav-link mx-2 " href="/logout">Logout</a>
+          </div>
+          @else
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
@@ -28,14 +47,10 @@
             </ul>
           </div>
           <div class="d-flex float-end">
-            @auth
-            <a class="nav-link mx-2 {{ Request::is('profil') ? 'active' : '' }}" href="/profil">Profil</a>
-            <a class="nav-link mx-2 " href="/logout">Logout</a>
-            @else
             <a class="nav-link mx-2 {{ Request::is('daftar') ? 'active' : '' }}" href="/daftar">Daftar</a>
             <a class="nav-link mx-2 {{ Request::is('login') ? 'active' : '' }}" href="/login">Login</a>
-            @endauth
           </div>
+          @endauth
         </div>
       </nav>
       

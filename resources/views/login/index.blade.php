@@ -23,8 +23,8 @@
                 <div class="col-6">
                     <button type="submit" class="btn btn-primary btn-center w-50" name="simpan">Login</button>
                 </div>
-            </div></center>
-            <center><a href="/daftar">Register</a></center>  
+            </div>
+            </center>  
             </form>
         </div>
     </div>

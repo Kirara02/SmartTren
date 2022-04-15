@@ -18,17 +18,12 @@ class ArtikelController extends Controller
         
         return view('artikel.index')->with($data);
     }
-    // public function author($id){
-    //     $data['artikel'] = Artikel::where('penulis','=',$id)->get();
-    //     return view('artikel.author')->with($data);
-    // }
-    public function create(Request $req){
-        Artikel::create([
-            'judul'=> $req->judul,
-            'kategori'=> $req->kategori,
-            'penulis'=> $req->penulis,
-            'isi'=> $req->isi
-        ]);
-        return redirect('/artikel');
+    public function author($author){
+        $data['artikel'] = Artikel::where('penulis','like',$author)->get();
+        return view('artikel.index')->with($data);
+    }
+    public function kat($kat){
+        $data['artikel'] = Artikel::where('kategori','like',$kat)->get();
+        return view('artikel.index')->with($data);
     }
 }

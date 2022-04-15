@@ -1,27 +1,25 @@
 $(function(){
     console.log('Irrashaimase');
-    $('.tampilModalUbah').on('click', function(){
-    $('#formModalLabel').html('Edit Data');
-    $('.modal-footer button[type=submit]').html('Ubah Data');
-            $('.modal-body form').attr('action', '/artikel/ubah'); 
-            const id = $(this).data('id');
+    $('.ubahArtikel').on('click', function(){
+        $('#formModalLabel').html('Edit Artikel');
+        $('.modal-footer button[type=submit]').html('Edit Data');
+        const id = $(this).data('id');
+            $('.modal-body form').attr('action', '/post/ubah{{ $id }}}'); 
             
             $.ajax({
-                url : '/artikel/getUbah',
+                url : '/post/getUbah',
                 data : {id : id},
                 method : 'post',
                 dataType : 'json',
                 success : function(data){
                     $('#judul').val(data.judul);
                     $('#kategori').val(data.kategori);
-                    $('#penulis').val(data.penulis);
-                    $('#isi').val(data.isi);
-                    $('#id').val(data.id);
-                    
+                    $('#isi').val(data.isi); 
+                    console.log(data);
                 }
             });
         $('.close').on('click', function(){
-            window.location.replace('/artikel');
+            window.location.replace('/post');
         });
     });
 });
